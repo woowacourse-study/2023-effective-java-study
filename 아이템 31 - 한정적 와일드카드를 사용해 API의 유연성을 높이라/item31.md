@@ -356,7 +356,7 @@ public class Refrigerator {
 즉 어떤 제네릭 타입의 메서드가, 해당 제네릭 타입을 return하면 Producer 이고,
 어떤 제네릭 타입의 메서드가, 제네릭 타입을 인자로 사용하는 경우 Consumer 입니다.
 
-이는 [Orable 공식 가이드라인](https://docs.oracle.com/javase/tutorial/java/generics/wildcardGuidelines.html)에도 나와있는 내용입니다.
+이는 [Oracle 공식 가이드라인](https://docs.oracle.com/javase/tutorial/java/generics/wildcardGuidelines.html)에도 나와있는 내용입니다.
 
 <br>
 <br>
