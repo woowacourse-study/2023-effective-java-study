@@ -7,7 +7,7 @@
 
 그렇다면 정적 팩터리 메서드란 무엇인가?
 
-java.lang 패키지에 Boolean 클래스는 정적 메서드 valueOf() 살펴보자.
+java.lang 패키지에 있느 Boolean 클래스의 정적 메서드 valueOf() 살펴보자.
 
 ```java
 public class Boolean {
