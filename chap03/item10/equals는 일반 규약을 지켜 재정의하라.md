@@ -12,7 +12,7 @@
 
 ## equals를 재정의해야 할 때는 언제일까?
 - **객체 식별성**(두 객체가 물리적으로 같은가)을 확인하는 것이 아니라 **논리적 동치성**을 확인해야 하는데, equals가 논리적 동치성을 비교하도록 재정의되지 않았을 때
-- 주로 값 클래스들이 이 경우에 해당한다. (ex. Integer, Stream)
+- 주로 값 클래스들이 이 경우에 해당한다. (ex. Integer, String)
 
 <br>
 
@@ -22,7 +22,7 @@ null이 아닌 모든 참조 값 x에 대해, `x.equals(x)는 true다`.
 ### 2. 대칭성 (Symmetry)
 null이 아닌 모든 참조 값 x, y에 대해, `x.equals(y)가 true`면 `y.equals(x)도 true`다.
 ### 3. 추이성 (Transitivity)
-null이 아닌 모든 참조 값 x, y, z에 대해, `x.equals(y)가 true`면 `y.equals(z)도 true`다.
+null이 아닌 모든 참조 값 x, y, z에 대해, `x.equals(y)가 true`고 `y.equals(z)도 true`면 `x.equals(z)도 true`다.
 ### 4. 일관성(Consistency)
 null이 아닌 모든 참조 값 x, y에 대해, `x.equals(y)`를 반복해서 호출하면 항상 `true`를 반환하거나 항상 `false`를 반환해야 한다.
 ### 5. null-아님
@@ -139,7 +139,7 @@ public class ColorPoint extends Point {
         if (!(o instanceof ColorPoint)) { // o가 Point의 인스턴스지만 ColorPoint의 인스턴스는 아닐 때
             return o.equals(this);
         }
-        return super.equals(o) && ((ColorPonit) o).color == color;
+        return super.equals(o) && ((ColorPoint) o).color == color;
     }
 }
 ```
@@ -201,6 +201,7 @@ public class ColorPoint extends Point {
 ```java
 System.out.println(onUnitCircle(new ColorPoint(0, 1, Color.RED))); // false
 ```
+- 😅 다만 `hashCode`까지 잘 재정의해주어야 `instanceof`로 구현했을 때 true가 나온다.
 
 <br>
    
